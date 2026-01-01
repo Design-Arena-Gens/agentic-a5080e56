@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1a0f0a;
+  color: #fff;
+  overflow-x: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.retro-text {
+  font-family: 'Righteous', cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.split-text span {
+  display: inline-block;
+}
+
+.groovy-gradient {
+  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 25%, #FFD700 50%, #20B2AA 75%, #FF6B35 100%);
+  background-size: 200% 200%;
+  animation: groovy-shift 8s ease infinite;
+}
+
+@keyframes groovy-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.retro-border {
+  border: 4px solid #FF6B35;
+  box-shadow:
+    0 0 0 8px #F7931E,
+    0 0 0 12px #FFD700,
+    0 0 40px rgba(255, 107, 53, 0.5);
+}
+
+.wig-card {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+  border: 3px solid #FF6B35;
+  box-shadow:
+    0 0 20px rgba(255, 107, 53, 0.3),
+    inset 0 0 40px rgba(255, 215, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.wig-card:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow:
+    0 20px 40px rgba(255, 107, 53, 0.5),
+    inset 0 0 60px rgba(255, 215, 0, 0.2);
+}
+
+.disco-ball {
+  position: relative;
+}
+
+.disco-ball::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(255, 107, 53, 0.3) 0%, transparent 50%);
+  animation: disco-spin 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes disco-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.funky-shadow {
+  text-shadow:
+    3px 3px 0 #FF6B35,
+    6px 6px 0 #F7931E,
+    9px 9px 0 #FFD700;
+}
+
+.neon-glow {
+  text-shadow:
+    0 0 10px #FF6B35,
+    0 0 20px #FF6B35,
+    0 0 30px #FF6B35,
+    0 0 40px #F7931E,
+    0 0 70px #F7931E;
+}
